@@ -41,7 +41,7 @@ loader.load('model/dice.glb', function (gltf) {
         console.error(error);
     });
 
-document.body.addEventListener('click', function() {
+document.body.addEventListener('dblclick', function() {
     resetPositions(gltfObject.scene);
     var randomFace = generateFace();
     var facesCoords = getFacesCoords(randomFace);
