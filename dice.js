@@ -24,6 +24,7 @@ loader.load('model/dice.glb', function (gltf) {
         function animate() {
             controls.update();
 
+            gltf.scene.rotateX(rotate);
             gltf.scene.rotateY(rotate);
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
