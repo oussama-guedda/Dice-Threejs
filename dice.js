@@ -25,9 +25,9 @@ loader.load('model/dice.glb', function (gltf) {
             controls.update();
 
             if(isInRotate) {
-                gltf.scene.rotateX(Math.random()*0.05);
-                gltf.scene.rotateY(Math.random()*0.05);
-                gltf.scene.rotateZ(Math.random()*0.05);
+                gltf.scene.rotateX(Math.random()*0.06);
+                gltf.scene.rotateY(Math.random()*0.06);
+                gltf.scene.rotateZ(Math.random()*0.06);
             }
 
             requestAnimationFrame(animate);
