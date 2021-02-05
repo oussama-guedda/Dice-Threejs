@@ -51,7 +51,7 @@ document.body.addEventListener('dblclick', function() {
 
     window.setTimeout(function() {
         isInRotate = false;
-        setDicePosition(gltfObject.scene, facesCoords.rotatationX, facesCoords.rotationY, facesCoords.rotationZ);
+        setDicePosition(gltfObject.scene, facesCoords.rotationX, facesCoords.rotationY, facesCoords.rotationZ);
         faceElement.innerHTML = "Face : " + randomFace.toString();
     }, 3000);
 }, false);
@@ -61,40 +61,42 @@ camera.position.y = 7;
 camera.position.z = 1;
 
 function getFacesCoords(face) {
+    console.log(face);
+
     var facesCoords = [
         {
             face: 1,
-            rotatationX: 0.0,
+            rotationX: 0.0,
             rotationY: 0.0,
             rotationZ: 0.0
         },
         {
             face: 2,
-            rotatationX: 0.0,
+            rotationX: 0.0,
             rotationY: 0.0,
             rotationZ: 1.5
         },
         {
             face: 3,
-            rotatationX: 0.0,
+            rotationX: 0.0,
             rotationY: 0.0,
             rotationZ: -1.6
         },
         {
             face: 4,
-            rotatationX: -1.6,
+            rotationX: -1.6,
             rotationY: 0.0,
             rotationZ: -1.6
         },
         {
             face: 5,
-            rotatationX: 1.6,
+            rotationX: 1.6,
             rotationY: 1.5,
             rotationZ: 1.5
         },
         {
             face: 6,
-            rotatationX: 1.7,
+            rotationX: 1.7,
             rotationY: 0.0,
             rotationZ: 0.0
         }
