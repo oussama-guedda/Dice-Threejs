@@ -12,8 +12,21 @@ var loader = new THREE.GLTFLoader();
 
 var isInRotate = false;
 
+// Ajout du sol
+var floorMaterial = new THREE.MeshPhongMaterial({
+    color: "#00aa00",
+    side: THREE.DoubleSide
+});
+var floorGeometry = new THREE.PlaneGeometry(30, 30, 10, 10);
+var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+floor.receiveShadow = true;
+floor.rotation.x = Math.PI / 2;
+scene.add(floor);
+
 loader.load('model/dice.glb', function (gltf) {
         scene.add(gltf.scene);
+
+        gltf.scene.position.y = 1;
 
         var controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enablePan = false;
@@ -45,6 +58,7 @@ document.body.addEventListener('click', function() {
     isInRotate = !isInRotate;
 }, false);
 
+camera.position.y = 3;
 camera.position.z = 10;
 
 function generateFace() {
