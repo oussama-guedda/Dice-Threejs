@@ -61,8 +61,6 @@ camera.position.y = 7;
 camera.position.z = 1;
 
 function getFacesCoords(face) {
-    console.log(face);
-
     var facesCoords = [
         {
             face: 1,
@@ -138,5 +136,5 @@ function addFloor() {
 addFloor();
 
 function generateFace() {
-    return Math.round(Math.random()*6);
+    return Math.round(Math.random()*5)+1;
 }
