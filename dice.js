@@ -8,35 +8,6 @@ scene.background = new THREE.Color(0, 0, 0);
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 
-/*const loadManager = new THREE.LoadingManager();
-const loader = new THREE.TextureLoader(loadManager);
-
-const materials = [
-    new THREE.MeshBasicMaterial({map: loader.load('textures/1.png')}),
-    new THREE.MeshBasicMaterial({map: loader.load('textures/2.png')}),
-    new THREE.MeshBasicMaterial({map: loader.load('textures/3.png')}),
-    new THREE.MeshBasicMaterial({map: loader.load('textures/4.png')}),
-    new THREE.MeshBasicMaterial({map: loader.load('textures/5.png')}),
-    new THREE.MeshBasicMaterial({map: loader.load('textures/6.png')}),
-];
-
-loadManager.onLoad = () => {
-    const cube = new THREE.Mesh(geometry, materials);
-    scene.add(cube);
-
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.autoRotate = true;
-    controls.minDistance = 2;
-    controls.maxDistance = 30;
-
-    function animate() {
-        controls.update();
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-    }
-    animate();
-};*/
-
 var loader = new THREE.GLTFLoader();
 
 loader.load('model/dice.glb', function (gltf) {
