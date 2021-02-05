@@ -41,7 +41,7 @@ loader.load('model/dice.glb', function (gltf) {
         console.error(error);
     });
 
-document.body.addEventListener('dblclick', function() {
+document.body.addEventListener('click', function() {
     resetPositions(gltfObject.scene);
     var randomFace = generateFace();
     var facesCoords = getFacesCoords(randomFace);
@@ -113,27 +113,6 @@ function setDicePosition(object, rotationX, rotationY, rotationZ) {
     object.rotation.x = rotationX;
     object.rotation.y = rotationY;
     object.rotation.z = rotationZ;
-
-/*    let positionsAreCorrect = true;
-
-    if(object.rotation.x.toFixed(1) !== rotationX) {
-        object.rotateX(Math.random()*0.06);
-        positionsAreCorrect = false;
-    }
-
-    if(object.rotation.y.toFixed(1) !== rotationY) {
-        object.rotateY(Math.random()*0.06);
-        positionsAreCorrect = false;
-    }
-
-    if(object.rotation.z.toFixed(1) !== rotationZ) {
-        object.rotateZ(Math.random() * 0.06);
-        positionsAreCorrect = false;
-    }
-
-    if(!positionsAreCorrect) {
-        setDicePosition(object, rotationX, rotationY, rotationZ);
-    }*/
 }
 
 function resetPositions(object) {
