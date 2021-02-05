@@ -10,7 +10,7 @@ const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 
 var loader = new THREE.GLTFLoader();
 
-var rotate = 0;
+var isInRotate = false;
 
 loader.load('model/dice.glb', function (gltf) {
         scene.add(gltf.scene);
@@ -24,8 +24,12 @@ loader.load('model/dice.glb', function (gltf) {
         function animate() {
             controls.update();
 
-            gltf.scene.rotateX(rotate);
-            gltf.scene.rotateY(rotate);
+            if(isInRotate) {
+                gltf.scene.rotateX(Math.random()*0.05);
+                gltf.scene.rotateY(Math.random()*0.05);
+                gltf.scene.rotateZ(Math.random()*0.05);
+            }
+
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
         }
@@ -38,11 +42,7 @@ loader.load('model/dice.glb', function (gltf) {
     });
 
 document.body.addEventListener('click', function() {
-    if(rotate !== 0) {
-        rotate = 0;
-    } else {
-        rotate = .03;
-    }
+    isInRotate = !isInRotate;
 }, false);
 
 camera.position.z = 10;
